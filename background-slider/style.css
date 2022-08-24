@@ -50,9 +50,11 @@ body::before {
   transition: 0.4s ease;
   z-index: 1;
 }
+
 .slide.active {
     opacity: 1;
 }
+
 .arrow {
   position: fixed;
   background-color: transparent;
@@ -66,13 +68,13 @@ body::before {
 }
 
 .arrow:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .left-arrow {
-    left: calc(15vw - 65px);
+  left: calc(15vw - 65px);
 }
 
 .right-arrow {
-    right: calc(15vw - 65px);
+  right: calc(15vw - 65px);
 }
