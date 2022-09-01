@@ -24,7 +24,7 @@ body {
 h1 {
     font-size: 4rem;
     position: absolute;
-    /* color: #fff; */
+    color: #fff;
     left: 50%;
     top: 20%;
     transform: translateX(-50%);
@@ -67,7 +67,72 @@ h1 {
 }
 
 .split {
-    position: relative;
+    position: absolute;
     width: 50%;
     height: 100%;
+    overflow: hidden;
+}
+
+.split.left {
+    left: 0;
+    background: url('./ps.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.split.left::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color);
+}
+.split.right {
+    right: 0;
+    background: url('./xbox.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);
+}
+
+.split.left,
+.split.right,
+.split.left::before,
+.split.right::before {
+    transition: all var(--speed) ease-in-out;
+}
+
+.hover-left .left {
+    width: var(--hover-width);
+}
+
+.hover-left .right {
+    width: var(--other-width);
+}
+
+.hover-right .right {
+    width: var(--hover-width);
+}
+
+.hover-right .left {
+    width: var(--other-width);
+}
+
+@media (max-width:800px) {
+    h1 {
+        font-size: 2rem;
+        top: 30%;
+    }
+
+    .btn {
+        padding: 1.2rem;
+        width: 12rem;
+    }
 }
